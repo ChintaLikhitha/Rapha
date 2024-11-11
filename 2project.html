@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=2.0">
+  <title>Winter Travel Destinations</title>
+  
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Basic Styling */
+    body {
+      font-family: Arial, sans-serif;
+      color: #333fe7;
+      background-color: #e68619;
+    }
+
+    /* Navigation */
+    nav {
+      display: flex;
+      justify-content: space-around;
+      background-color: #e68619;
+      padding: 15px;
+    }
+    nav a {
+      
+      color: rgba(238, 17, 17, 0.99);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* Main Content */
+    .content {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 20px;
+      padding: 20px;
+    }
+    .place-card {
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 15px;
+      box-shadow: 0 4px 8px rgba(218, 148, 37, 0.905);
+    }
+    .place-card img {
+      width: 100%;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    /* Form Styling */
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(218, 148, 37, 0.905);
+      margin-bottom: 20px;
+    }
+    form input, form textarea, form button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    form button {
+      background-color: #00ffea;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* To-Do List */
+    #toDoList {
+      margin-top: 20px;
+    }
+    .todo-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      background: #e0e0e0;
+      margin-bottom: 5px;
+      border-radius: 5px;
+    }
+    .todo-item button {
+      background-color: rgb(0, 255, 17);
+      color: white;
+      border: none;
+      cursor: pointer;
+      padding: 5px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .content {
+        grid-template-columns: 1fr;
+      }
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <a href="#home">Home</a>
+    <a href="#places">Winter Destinations</a>
+    <a href="#contact">Contact</a>
+    <a href="#booking">Book Now</a>
+    <a href="#todo-list">To-Do List</a>
+  </nav>
+
+  <!-- Main Content Section -->
+  <div id="home" class="jumbotron text-center">
+    <h1>HELLO WINTER</h1>
+    <p>Your Winter Your Joy</p> 
+  </div>
+    
+    <!-- Sidebar with Places to Visit -->
+    <aside>
+      <div id="places" class="place-card">
+        <h1> Winter Destination Places</h1>
+        <img src="https://media.istockphoto.com/id/1770660388/photo/panorama-of-grindelwald-at-twilight-in-winter-switzerland.webp?a=1&b=1&s=612x612&w=0&k=20&c=MR5IvhTCzp4Xu-WQLMFRrEg4a7id2foUK0jahBY8yTo=" alt="Switzerland">
+        <h2>Switzerland</h2>
+        <p>Enjoy skiing and scenic mountains in the heart of Switzerland.</p>
+      </div>
+      <div class="place-card">
+        <img src="https://media.istockphoto.com/id/147650991/photo/college-campus-in-winter.webp?a=1&b=1&s=612x612&w=0&k=20&c=gFP5d6u6Cy0cZUirt1UjXHw9THs9a_mRcOUWCIhXVHY=" alt="Canada">
+        <h2>Canada</h2>
+        <p>Explore winter wonderlands across Canada’s majestic landscapes.</p>
+      </div>
+      <div class="place-card">
+        <img src="https://media.istockphoto.com/id/177241741/photo/red-bridge.jpg?s=612x612&w=0&k=20&c=io61iRt82qNoe2w_iS5YVGEFnzr614L8IhvD9fOxuFM=" alt="Japan">
+        <h2>Japan</h2>
+        <p>Discover the beauty of winter in Japan, especially in Hokkaido.</p>
+      </div>
+    </aside>
+
+    <!-- Main Section for Forms and To-Do List -->
+    <section>
+      
+      <!-- Contact Form -->
+      <h2 id="contact">Contact Us</h2>
+      <form id="contactForm">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <textarea id="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+
+      <!-- Booking Form -->
+      <h2 id="booking">Booking Form</h2>
+      <form id="bookingForm">
+        <input type="text" placeholder="Destination" required>
+        <input type="date" required>
+        <input type="number" placeholder="Number of Guests" required>
+        <button type="submit">Book Now</button>
+      </form>
+
+      <!-- Dynamic To-Do List for Adding Tasks or Image URLs -->
+      <section id="todo-list" class="todo-section">
+        <h2> To-Do List</h2>
+        <input type="text" id="new-task" placeholder="Add new  task...">
+        <button onclick="addTask()">Add Task</button>
+        <ul id="task-list"></ul>
+      </section>
+
+    </section>
+  </div>
+
+  <!-- JavaScript for Validation and Dynamic To-Do List -->
+  <script>
+    // Contact Form Validation
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+      const email = document.getElementById("email").value;
+      const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+
+      if (!emailPattern.test(email)) {
+        alert("Please enter a valid email address.");
+        event.preventDefault();
+      }
+    });
+
+    // Dynamic To-Do List
+    function addTask() {
+  let taskInput = document.getElementById("new-task");
+  let task = taskInput.value.trim();
+  if (task === "") {
+    alert("Please enter a task.");
+    return;
+  }
+  let li = document.createElement("li");
+  li.textContent = task;
+  // Create delete button for each task
+  let deleteBtn = document.createElement("button");
+  deleteBtn.textContent = "Remove";
+  deleteBtn.onclick = function() {
+    li.remove();
+  };
+  li.appendChild(deleteBtn);
+  document.getElementById("task-list").appendChild(li);
+  // Clear the input
+  taskInput.value = "";
+}
+  </script>
+
+</body>
+</html>
